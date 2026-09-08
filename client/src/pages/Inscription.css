@@ -1,0 +1,151 @@
+.inscription-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.inscription-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.25);
+}
+
+.inscription-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.4), rgba(0, 0, 0, 0.85));
+  z-index: 1;
+}
+
+.inscription-box {
+  position: relative;
+  z-index: 2;
+  background: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 2.5rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid rgba(193, 18, 31, 0.3);
+  box-shadow: 0 8px 32px rgba(193, 18, 31, 0.15);
+  margin: 2rem 0;
+}
+
+.inscription-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.logo-fit {
+  color: var(--blanc);
+}
+
+.logo-track {
+  color: var(--rouge);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--blanc);
+  margin-bottom: 0.5rem;
+}
+
+.sous-titre {
+  color: var(--texte);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.champ {
+  margin-bottom: 1.2rem;
+}
+
+.champ label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--texte);
+  margin-bottom: 0.4rem;
+}
+
+.champ input,
+.champ select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(43, 43, 43, 0.8);
+  border: 1px solid var(--gris-clair);
+  border-radius: 8px;
+  color: var(--blanc);
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.champ input:focus,
+.champ select:focus {
+  border-color: var(--rouge);
+}
+
+.champ select option {
+  background-color: var(--noir-clair);
+  color: var(--blanc);
+}
+
+.btn-inscription {
+  width: 100%;
+  padding: 0.85rem;
+  background: linear-gradient(135deg, var(--rouge), var(--rouge-fonce));
+  color: var(--blanc);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  transition: all 0.2s;
+  box-shadow: 0 4px 15px rgba(193, 18, 31, 0.4);
+}
+
+.btn-inscription:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(193, 18, 31, 0.6);
+}
+
+.erreur {
+  background-color: rgba(230, 57, 70, 0.15);
+  border: 1px solid var(--rouge);
+  color: var(--rouge);
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.lien-connexion {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--texte);
+}
+
+.lien-connexion a {
+  color: var(--rouge);
+  font-weight: 600;
+}
+
+.lien-connexion a:hover {
+  text-decoration: underline;
+}

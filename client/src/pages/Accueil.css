@@ -1,0 +1,218 @@
+/* ==========================================================================
+   VARIABLES (Assure-toi qu'elles correspondent à ton projet)
+   ========================================================================== */
+:root {
+  --blanc: #ffffff;
+  --rouge: #c1121f;
+  --rouge-fonce: #780a10;
+  --texte: #e0e0e0;
+}
+
+/* ==========================================================================
+   STRUCTURE GLOBALE
+   ========================================================================== */
+.accueil-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-x: hidden; /* Évite les scrolls horizontaux parasites sur mobile */
+}
+
+/* Image de fond */
+.accueil-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.25);
+}
+
+/* Overlay sombre */
+.accueil-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
+  z-index: 1;
+}
+
+/* Conteneur de contenu */
+.accueil-contenu {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  max-width: 750px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   TYPOGRAPHIE & LOGO
+   ========================================================================== */
+.accueil-header {
+  margin-bottom: 3rem;
+}
+
+.accueil-logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.logo-fit { color: var(--blanc); }
+.logo-track { color: var(--rouge); }
+
+.accueil-titre {
+  font-size: clamp(2rem, 5vw, 3.5rem); /* S'adapte dynamiquement à l'écran */
+  font-weight: 800;
+  color: var(--blanc);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.titre-rouge { color: var(--rouge); }
+
+.accueil-description {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--texte);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   BOUTONS (CTA) - VERSION CORRIGÉE
+   ========================================================================== */
+.accueil-btns {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.btn-commencer, .btn-connexion {
+  /* Même padding et hauteur exacte pour les deux */
+  padding: 0.9rem 2.2rem; 
+  border-radius: 8px;
+  
+  /* Grand texte bien visible */
+  font-size: 1rem; 
+  font-weight: 700; 
+  cursor: pointer;
+  transition: all 0.25s ease;
+  
+  box-sizing: border-box; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px; /* Largeur minimale fixe pour l'harmonie visuelle */
+}
+
+/* Bouton Principal (Commencer) */
+.btn-commencer {
+  background: linear-gradient(135deg, var(--rouge), var(--rouge-fonce));
+  color: var(--blanc);
+  border: none;
+  box-shadow: 0 4px 15px rgba(193, 18, 31, 0.4);
+}
+
+.btn-commencer:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(193, 18, 31, 0.6);
+}
+
+/* Bouton Secondaire (Se connecter) - Le style mystérieux */
+.btn-connexion {
+  background: transparent;
+  color: var(--rouge);
+  border: 2px solid rgba(193, 18, 31, 0.5); /* Bordure rouge semi-transparente */
+}
+
+.btn-connexion:hover {
+  background: rgba(193, 18, 31, 0.1); /* Léger halo rouge au survol */
+  border-color: var(--rouge);
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   SECTION STATISTIQUES
+   ========================================================================== */
+.accueil-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1.5rem;
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Support Safari */
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Effet Glassmorphism moderne */
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.stat-nombre {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--rouge);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--texte);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (RESPONSIVE MOBILE)
+   ========================================================================== */
+@media (max-width: 576px) {
+  .accueil-btns {
+    flex-direction: column; /* Les boutons s'empilent proprement */
+    width: 100%;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.2rem;
+  }
+  
+  .btn-commencer, .btn-connexion {
+    width: 100%; /* Pleine largeur sur mobile */
+    min-width: unset; 
+    font-size: 0.95rem;
+  }
+
+  .accueil-stats {
+    flex-direction: column; /* Les stats s'empilent */
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .stat-divider {
+    width: 40px; /* Devient une ligne horizontale */
+    height: 1px;
+  }
+}
