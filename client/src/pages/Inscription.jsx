@@ -16,7 +16,7 @@ function Inscription() {
   const handleInscription = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('http://localhost:5000/api/auth/inscription', {
+      await axios.post('https://fittrack-backend-hpeh.onrender.com/api/auth/inscription', {
         nom,
         email,
         motDePasse,

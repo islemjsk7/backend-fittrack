@@ -32,7 +32,7 @@ function TableauDeBord() {
 
     const fetchSeances = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/seances', {
+        const res = await axios.get('https://fittrack-backend-hpeh.onrender.com/api/seances', {
           headers: { Authorization: token }
         })
         setSeances(res.data)
@@ -43,7 +43,7 @@ function TableauDeBord() {
 
     const fetchNotifs = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/notifications', {
+        const res = await axios.get('https://fittrack-backend-hpeh.onrender.com/api/notifications', {
           headers: { Authorization: token }
         })
         setNotifications(res.data)

@@ -33,7 +33,7 @@ function Journal() {
     e.preventDefault()
     try {
       const token = localStorage.getItem('token')
-      await axios.post('http://localhost:5000/api/seances', {
+      await axios.post('https://fittrack-backend-hpeh.onrender.com/api/seances', {
         duree: parseInt(duree),
         exercices,
         notes

@@ -22,7 +22,7 @@ function Admin() {
 
   const fetchUtilisateurs = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/admin/utilisateurs', {
+      const res = await axios.get('https://fittrack-backend-hpeh.onrender.com/api/admin/utilisateurs', {
         headers: { Authorization: token }
       })
       setUtilisateurs(res.data)
@@ -33,7 +33,7 @@ function Admin() {
 
   const fetchExercices = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/admin/exercices', {
+      const res = await axios.get('https://fittrack-backend-hpeh.onrender.com/api/admin/exercices', {
         headers: { Authorization: token }
       })
       setExercices(res.data)
@@ -44,7 +44,7 @@ function Admin() {
 
   const supprimerUtilisateur = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/admin/utilisateurs/${id}`, {
+      await axios.delete(`https://fittrack-backend-hpeh.onrender.com/api/admin/utilisateurs/${id}`, {
         headers: { Authorization: token }
       })
       fetchUtilisateurs()
@@ -56,7 +56,7 @@ function Admin() {
   const ajouterExercice = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('http://localhost:5000/api/admin/exercices', {
+      await axios.post('https://fittrack-backend-hpeh.onrender.com/api/admin/exercices', {
         nom: nomExercice,
         categorie: categorieExercice
       }, {
@@ -74,7 +74,7 @@ function Admin() {
 
   const supprimerExercice = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/admin/exercices/${id}`, {
+      await axios.delete(`https://fittrack-backend-hpeh.onrender.com/api/admin/exercices/${id}`, {
         headers: { Authorization: token }
       })
       fetchExercices()
@@ -86,7 +86,7 @@ function Admin() {
   const envoyerNotification = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('http://localhost:5000/api/admin/notifications', {
+      await axios.post('https://fittrack-backend-hpeh.onrender.com/api/admin/notifications', {
         message
       }, {
         headers: { Authorization: token }

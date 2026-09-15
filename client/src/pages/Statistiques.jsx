@@ -12,7 +12,7 @@ function Statistiques() {
     const fetchSeances = async () => {
       try {
         const token = localStorage.getItem('token')
-        const res = await axios.get('http://localhost:5000/api/seances', {
+        const res = await axios.get('https://fittrack-backend-hpeh.onrender.com/api/seances', {
           headers: { Authorization: token }
         })
         setSeances(res.data)
